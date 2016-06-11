@@ -74,7 +74,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\HOTS.jpg" />
+    <Content Include="Assets\League of Legends.jpg" />
     <Content Include="Assets\Overwatch_%28PC%29.jpg" />
+    <Content Include="Assets\rocket-league.jpg" />
     <Content Include="GameDetails.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="OverwatchTracker.aspx" />
