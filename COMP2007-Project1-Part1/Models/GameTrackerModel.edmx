@@ -59,9 +59,6 @@
           <Property Name="SecondTeam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Winner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MatchLength" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="Dragons" Type="Int32" Nullable="false" />
-          <Property Name="Gold" Type="Int32" Nullable="false" />
-          <Property Name="Forfeit" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PlayOfTheGame" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Team">
@@ -100,9 +97,6 @@
                 <ScalarProperty Name="SecondTeam" ColumnName="SecondTeam" />
                 <ScalarProperty Name="Winner" ColumnName="Winner" />
                 <ScalarProperty Name="MatchLength" ColumnName="MatchLength" />
-                <ScalarProperty Name="Dragons" ColumnName="Dragons" />
-                <ScalarProperty Name="Gold" ColumnName="Gold" />
-                <ScalarProperty Name="Forfeit" ColumnName="Forfeit" />
                 <ScalarProperty Name="PlayOfTheGame" ColumnName="PlayOfTheGame" />
               </MappingFragment>
             </EntityTypeMapping>

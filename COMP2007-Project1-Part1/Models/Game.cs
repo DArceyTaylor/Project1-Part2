@@ -23,9 +23,6 @@ namespace COMP2007_Project1_Part1.Models
         public string SecondTeam { get; set; }
         public string Winner { get; set; }
         public System.TimeSpan MatchLength { get; set; }
-        public int Dragons { get; set; }
-        public int Gold { get; set; }
-        public string Forfeit { get; set; }
         public string PlayOfTheGame { get; set; }
     }
 }

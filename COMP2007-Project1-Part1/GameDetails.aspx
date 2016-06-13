@@ -15,6 +15,10 @@
                          Display="Dynamic" BackColor="Red" ForeColor="White" Font-Size="Large" ></asp:RangeValidator>
                 </div>
                 <div class="form-group">
+                    <label class="control-label" for="GameNameTextBox">Game Name: </label>
+                    <asp:TextBox runat="server" CssClass="form-control" id="GameNameTextBox" placeholder="Game Name" required="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
                     <label class="control-label" for="MatchNumberTextBox">Match Number: </label>
                     <asp:TextBox runat="server" CssClass="form-control" id="MatchNumberTextBox" placeholder="Match Number" required="true"></asp:TextBox>
                 </div>
@@ -28,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="Team2TextBox">Team 2 Name: </label>
-                    <asp:TextBox runat="server" CssClass="form-control" id="TextBox1" placeholder="Team 2" required="true"></asp:TextBox>
+                    <asp:TextBox runat="server" CssClass="form-control" id="Team2TextBox" placeholder="Team 2" required="true"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="POTGTextBox">Play of the game: </label>

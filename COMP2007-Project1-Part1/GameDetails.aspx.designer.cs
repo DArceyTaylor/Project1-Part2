@@ -31,6 +31,15 @@ namespace COMP2007_Project1_Part1 {
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
         
         /// <summary>
+        /// GameNameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox GameNameTextBox;
+        
+        /// <summary>
         /// MatchNumberTextBox control.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,13 @@ namespace COMP2007_Project1_Part1 {
         protected global::System.Web.UI.WebControls.TextBox Team1TextBox;
         
         /// <summary>
-        /// TextBox1 control.
+        /// Team2TextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox Team2TextBox;
         
         /// <summary>
         /// POTGTextBox control.

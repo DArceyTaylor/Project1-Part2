@@ -100,7 +100,7 @@
       <DependentUpon>GameTrackerModel.edmx</DependentUpon>
       <LastGenOutput>GameTrackerModel.cs</LastGenOutput>
     </Content>
-    <Content Include="OverwatchTracker.aspx" />
+    <Content Include="GameTracker.aspx" />
     <Content Include="packages.config" />
     <Content Include="Register.aspx" />
     <Content Include="Site.Master" />
@@ -213,12 +213,12 @@
     <Compile Include="Models\Team.cs">
       <DependentUpon>GameTrackerModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OverwatchTracker.aspx.cs">
-      <DependentUpon>OverwatchTracker.aspx</DependentUpon>
+    <Compile Include="GameTracker.aspx.cs">
+      <DependentUpon>GameTracker.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OverwatchTracker.aspx.designer.cs">
-      <DependentUpon>OverwatchTracker.aspx</DependentUpon>
+    <Compile Include="GameTracker.aspx.designer.cs">
+      <DependentUpon>GameTracker.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
