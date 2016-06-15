@@ -50,6 +50,7 @@ namespace COMP2007_Project1_Part1
                 GameDataGridView.DataSource = Games.AsQueryable().OrderBy(SortString).ToList();
                 GameDataGridView.DataBind();
             }
+
         }
 
         /**
@@ -173,5 +174,16 @@ namespace COMP2007_Project1_Part1
                 }
             }
         }
+
+        protected void WeekForwardButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void WeekBackButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
-                <h1>Game Data</h1>
+                <h1>Game Data for week: <asp:TextBox DataField="MatchDate" /></h1>
                 <a href="/GameDetails.aspx" class="btn btn-success btn-sm" onclick=""><i class="fa fa-plus"></i> Add Match Details</a>
                 <div>
                 <label for="PageSizeDropDownList">Records per Page: </label>
@@ -33,7 +33,7 @@
                     PagerStyle-CssClass="pagination-ys">
 
                     <Columns>
-                        <asp:BoundField DataField="MatchDate" HeaderText="MatchDate" Visible="true" SortExpression="MatchDate" />
+                        <asp:BoundField DataField="MatchDate" HeaderText="MatchDate" Visible="true" SortExpression="MatchDate" DataFormatString="{0:MM/dd/yyyy}" />
                         <asp:BoundField DataField="MatchNumber" HeaderText="Match Number" Visible="true" SortExpression="MatchNumber" />
                         <asp:BoundField DataField="RoundNumber" HeaderText="RoundNumber" Visible="true" SortExpression="RoundNumber" />
                         <asp:BoundField DataField="FirstTeam" HeaderText="FirstTeam" Visible="true" SortExpression="FirstTeam" />
@@ -44,12 +44,20 @@
                         <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit" 
                             NavigateUrl="~/GameDetails.aspx" ControlStyle-CssClass="btn btn-primary btn-sm" runat="server" 
                             DataNavigateUrlFields="GameID" DataNavigateUrlFormatString="GameDetails.aspx?GameID={0}" />
-                        <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o -fa-lg'></i>Delete" 
+                        <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o -fa-lg'></i> Delete" 
                             ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                     </Columns>
 
                 </asp:GridView>
-                <a class="btn btn-primary" href="GameSelection.aspx">Back <span class="glyphicon glyphicon-chevron-Left"></span></a>
+                <div>
+                    
+                    <a class="btn btn-success"><span class="glyphicon glyphicon-backward" aria-hidden="true"> Back</span></a>
+                    <a class="btn btn-success pull-right">Forward <span class="glyphicon glyphicon-forward" aria-hidden="true"></span></a>
+                
+                </div>
+                <div>
+                    <a class="btn btn-primary" href="GameSelection.aspx"><span class="glyphicon glyphicon-arrow-left"> Back</span></a>
+                </div>
             </div>
         </div>
     </div>
