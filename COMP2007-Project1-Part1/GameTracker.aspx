@@ -33,7 +33,6 @@
                     PagerStyle-CssClass="pagination-ys">
 
                     <Columns>
-                        <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" SortExpression="GameID" />
                         <asp:BoundField DataField="MatchDate" HeaderText="MatchDate" Visible="true" SortExpression="MatchDate" />
                         <asp:BoundField DataField="MatchNumber" HeaderText="Match Number" Visible="true" SortExpression="MatchNumber" />
                         <asp:BoundField DataField="RoundNumber" HeaderText="RoundNumber" Visible="true" SortExpression="RoundNumber" />

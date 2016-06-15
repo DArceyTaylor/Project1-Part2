@@ -28,7 +28,7 @@ namespace COMP2007_Project1_Part1
             //connect to the EF framework
             using (GameConnection db = new GameConnection())
             {
-                //populate a student object instance with the StudentID from the URL paramerter
+                //populate a student object instance with the GameID from the URL paramerter
                 Game updatedGame = (from game in db.Games
                                     where game.GameID == GameID
                                     select game).FirstOrDefault();
@@ -97,28 +97,9 @@ namespace COMP2007_Project1_Part1
                 }
 
                 // save our changes also updates and inserts
-                try
-                {
-                    db.SaveChanges();
-                }
                 
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-                {
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
-                    }
-                    throw raise;
-                }
+                db.SaveChanges();
+
                 // redirect back to the updated students page
                 Response.Redirect("~/GameTracker.aspx");
             }
