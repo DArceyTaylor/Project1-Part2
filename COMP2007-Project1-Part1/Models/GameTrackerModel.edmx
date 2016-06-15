@@ -17,10 +17,6 @@
           <Property Name="FirstTeam" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SecondTeam" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Winner" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="MatchLength" Type="time" Precision="7" Nullable="false" />
-          <Property Name="Dragons" Type="int" Nullable="false" />
-          <Property Name="Gold" Type="int" Nullable="false" />
-          <Property Name="Forfeit" Type="varchar" MaxLength="1" Nullable="false" />
           <Property Name="PlayOfTheGame" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Teams">
@@ -58,7 +54,6 @@
           <Property Name="FirstTeam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SecondTeam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Winner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MatchLength" Type="Time" Nullable="false" Precision="7" />
           <Property Name="PlayOfTheGame" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Team">
@@ -75,7 +70,7 @@
           <Property Name="Player5" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Player6" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="DefaultConnection" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="GameConnection" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Games" EntityType="Self.Game" />
           <EntitySet Name="Teams" EntityType="Self.Team" />
         </EntityContainer>
@@ -84,7 +79,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GameTrackerModelStoreContainer" CdmEntityContainer="DefaultConnection">
+        <EntityContainerMapping StorageEntityContainer="GameTrackerModelStoreContainer" CdmEntityContainer="GameConnection">
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="GameTrackerModel.Game">
               <MappingFragment StoreEntitySet="Games">
@@ -96,7 +91,6 @@
                 <ScalarProperty Name="FirstTeam" ColumnName="FirstTeam" />
                 <ScalarProperty Name="SecondTeam" ColumnName="SecondTeam" />
                 <ScalarProperty Name="Winner" ColumnName="Winner" />
-                <ScalarProperty Name="MatchLength" ColumnName="MatchLength" />
                 <ScalarProperty Name="PlayOfTheGame" ColumnName="PlayOfTheGame" />
               </MappingFragment>
             </EntityTypeMapping>

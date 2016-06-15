@@ -37,7 +37,7 @@ namespace COMP2007_Project1_Part1
         protected void GetGameData()
         {
             // connect to EF
-            using (DefaultConnection db = new DefaultConnection())
+            using (GameConnection db = new GameConnection())
             {
 
                 string SortString = Session["SortColumn"].ToString() + " " + Session["SortDirection"].ToString();
@@ -89,7 +89,7 @@ namespace COMP2007_Project1_Part1
             int GameID = Convert.ToInt32(GameDataGridView.DataKeys[selectedRow].Values["GameID"]);
 
             // use EF to find the selected student in the DB and remove it
-            using (DefaultConnection db = new DefaultConnection())
+            using (GameConnection db = new GameConnection())
             {
                 //create object of the Student class and store the query string inside of it
                 Game deletedDepartment = (from gameRecords in db.Games

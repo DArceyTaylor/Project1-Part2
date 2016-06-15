@@ -90,6 +90,7 @@
     <Content Include="Assets\rocket-league.jpg" />
     <Content Include="GameDetails.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="GameTracker.aspx" />
     <Content Include="Models\GameTrackerModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GameTrackerModel.edmx</DependentUpon>
@@ -100,7 +101,6 @@
       <DependentUpon>GameTrackerModel.edmx</DependentUpon>
       <LastGenOutput>GameTrackerModel.cs</LastGenOutput>
     </Content>
-    <Content Include="GameTracker.aspx" />
     <Content Include="packages.config" />
     <Content Include="Register.aspx" />
     <Content Include="Site.Master" />
@@ -192,6 +192,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GameTracker.aspx.cs">
+      <DependentUpon>GameTracker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GameTracker.aspx.designer.cs">
+      <DependentUpon>GameTracker.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Game.cs">
       <DependentUpon>GameTrackerModel.tt</DependentUpon>
     </Compile>
@@ -212,13 +219,6 @@
     </Compile>
     <Compile Include="Models\Team.cs">
       <DependentUpon>GameTrackerModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GameTracker.aspx.cs">
-      <DependentUpon>GameTracker.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GameTracker.aspx.designer.cs">
-      <DependentUpon>GameTracker.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

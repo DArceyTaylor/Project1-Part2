@@ -13,13 +13,13 @@ namespace COMP2007_Project1_Part1 {
     public partial class GameDetails {
         
         /// <summary>
-        /// DateTextBox control.
+        /// MatchDateTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DateTextBox;
+        protected global::System.Web.UI.WebControls.TextBox MatchDateTextBox;
         
         /// <summary>
         /// RangeValidator1 control.
@@ -58,22 +58,22 @@ namespace COMP2007_Project1_Part1 {
         protected global::System.Web.UI.WebControls.TextBox RoundNumberTextBox;
         
         /// <summary>
-        /// Team1TextBox control.
+        /// FirstTeamTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Team1TextBox;
+        protected global::System.Web.UI.WebControls.TextBox FirstTeamTextBox;
         
         /// <summary>
-        /// Team2TextBox control.
+        /// SecondTeamTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Team2TextBox;
+        protected global::System.Web.UI.WebControls.TextBox SecondTeamTextBox;
         
         /// <summary>
         /// POTGTextBox control.
@@ -92,15 +92,6 @@ namespace COMP2007_Project1_Part1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox WinnerTextBox;
-        
-        /// <summary>
-        /// LengthTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LengthTextBox;
         
         /// <summary>
         /// CancelButton control.

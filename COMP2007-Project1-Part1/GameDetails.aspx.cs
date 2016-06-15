@@ -26,7 +26,7 @@ namespace COMP2007_Project1_Part1
             int GameID = Convert.ToInt32(Request.QueryString["GameID"]);
 
             //connect to the EF framework
-            using (DefaultConnection db = new DefaultConnection())
+            using (GameConnection db = new GameConnection())
             {
                 //populate a student object instance with the StudentID from the URL paramerter
                 Game updatedGame = (from game in db.Games
@@ -36,15 +36,15 @@ namespace COMP2007_Project1_Part1
                 //map the student properties to the form controls
                 if (updatedGame != null)
                 {
-                    DateTextBox.Text = updatedGame.MatchDate.ToString();
+                    MatchDateTextBox.Text = updatedGame.MatchDate.ToString();
                     GameNameTextBox.Text = updatedGame.GameName;
                     MatchNumberTextBox.Text = updatedGame.MatchNumber.ToString();
                     RoundNumberTextBox.Text = updatedGame.RoundNumber.ToString();
-                    Team1TextBox.Text = updatedGame.FirstTeam;
-                    Team2TextBox.Text = updatedGame.SecondTeam;
+                    FirstTeamTextBox.Text = updatedGame.FirstTeam;
+                    SecondTeamTextBox.Text = updatedGame.SecondTeam;
                     POTGTextBox.Text = updatedGame.PlayOfTheGame;
                     WinnerTextBox.Text = updatedGame.Winner;
-                    LengthTextBox.Text = updatedGame.MatchLength.ToString();
+                    //LengthTextBox.Text = updatedGame.MatchLength.ToString();
 
                 }
             }
@@ -60,7 +60,7 @@ namespace COMP2007_Project1_Part1
         protected void SaveButton_Click(object sender, EventArgs e)
         {
             // use EF to connect to the server
-            using (DefaultConnection db = new DefaultConnection())
+            using (GameConnection db = new GameConnection())
             {
                 // use the Student model to create a new student object and
                 // save a new record
@@ -80,15 +80,15 @@ namespace COMP2007_Project1_Part1
                 }
 
                 // add data to the new student record
-                newGame.MatchDate = Convert.ToDateTime(DateTextBox.Text);
+                newGame.MatchDate = Convert.ToDateTime(MatchDateTextBox.Text);
                 newGame.GameName = GameNameTextBox.Text;
                 newGame.MatchNumber = Convert.ToInt32(MatchNumberTextBox.Text);
                 newGame.RoundNumber = Convert.ToInt32(RoundNumberTextBox.Text);
-                newGame.FirstTeam = Team1TextBox.Text;
-                newGame.SecondTeam = Team2TextBox.Text;
+                newGame.FirstTeam = FirstTeamTextBox.Text;
+                newGame.SecondTeam = SecondTeamTextBox.Text;
                 newGame.PlayOfTheGame = POTGTextBox.Text;
                 newGame.Winner = WinnerTextBox.Text;
-                newGame.MatchLength = TimeSpan.Parse(LengthTextBox.Text);
+                //newGame.MatchLength = TimeSpan.Parse(LengthTextBox.Text);
 
                 // use LINQ to ADO.NET to add / insert new student to the db
                 if (GameID == 0)
@@ -97,8 +97,28 @@ namespace COMP2007_Project1_Part1
                 }
 
                 // save our changes also updates and inserts
-                db.SaveChanges();
-
+                try
+                {
+                    db.SaveChanges();
+                }
+                
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
                 // redirect back to the updated students page
                 Response.Redirect("~/GameTracker.aspx");
             }

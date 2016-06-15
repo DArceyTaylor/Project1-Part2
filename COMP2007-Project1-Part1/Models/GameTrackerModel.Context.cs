@@ -13,10 +13,10 @@ namespace COMP2007_Project1_Part1.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DefaultConnection : DbContext
+    public partial class GameConnection : DbContext
     {
-        public DefaultConnection()
-            : base("name=DefaultConnection")
+        public GameConnection()
+            : base("name=GameConnection")
         {
         }
     

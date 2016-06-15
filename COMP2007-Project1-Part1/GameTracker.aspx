@@ -34,17 +34,17 @@
 
                     <Columns>
                         <asp:BoundField DataField="GameID" HeaderText="Game ID" Visible="true" SortExpression="GameID" />
-                        <asp:BoundField DataField="Date" HeaderText="Date" Visible="true" SortExpression="Date" />
+                        <asp:BoundField DataField="MatchDate" HeaderText="MatchDate" Visible="true" SortExpression="MatchDate" />
                         <asp:BoundField DataField="MatchNumber" HeaderText="Match Number" Visible="true" SortExpression="MatchNumber" />
                         <asp:BoundField DataField="RoundNumber" HeaderText="RoundNumber" Visible="true" SortExpression="RoundNumber" />
-                        <asp:BoundField DataField="Team1" HeaderText="Team 1" Visible="true" SortExpression="Team1" />
-                        <asp:BoundField DataField="Team2" HeaderText="Team 2" Visible="true" SortExpression="Team2" />
-                        <asp:BoundField DataField="POTG" HeaderText="Play of the Game" Visible="true" SortExpression="POTG" />
-                        <asp:BoundField DataField="MatchLength" HeaderText="Match Length" Visible="true" SortExpression="MatchLength" />
+                        <asp:BoundField DataField="FirstTeam" HeaderText="FirstTeam" Visible="true" SortExpression="FirstTeam" />
+                        <asp:BoundField DataField="SecondTeam" HeaderText="SecondTeam" Visible="true" SortExpression="SecondTeam" />
+                        <asp:BoundField DataField="Winner" HeaderText="Winner" Visible="true" SortExpression="Winner" />
+                        <asp:BoundField DataField="PlayOfTheGame" HeaderText="Play of the Game" Visible="true" SortExpression="PlayOfTheGame" />
 
                         <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit" 
                             NavigateUrl="~/GameDetails.aspx" ControlStyle-CssClass="btn btn-primary btn-sm" runat="server" 
-                            DataNavigateUrlFields="DepartmentID" DataNavigateUrlFormatString="GameDetails.aspx?DepartmentDataDate={0}" />
+                            DataNavigateUrlFields="GameID" DataNavigateUrlFormatString="GameDetails.aspx?GameID={0}" />
                         <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o -fa-lg'></i>Delete" 
                             ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-danger btn-sm" />
                     </Columns>

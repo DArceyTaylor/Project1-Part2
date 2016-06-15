@@ -22,7 +22,6 @@ namespace COMP2007_Project1_Part1.Models
         public string FirstTeam { get; set; }
         public string SecondTeam { get; set; }
         public string Winner { get; set; }
-        public System.TimeSpan MatchLength { get; set; }
         public string PlayOfTheGame { get; set; }
     }
 }

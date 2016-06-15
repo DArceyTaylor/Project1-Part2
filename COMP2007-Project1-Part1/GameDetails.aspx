@@ -8,10 +8,10 @@
                 <h5>All Fields are Required</h5>
                 <br />
                 <div class="form-group">
-                    <label class="control-label" for="DateTextBox">Date: </label>
-                    <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" id="DateTextBox" placeholder="Date Format: yyyy/mm/dd" required="true"></asp:TextBox>
+                    <label class="control-label" for="MatchDateTextBox">Date: </label>
+                    <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" id="MatchDateTextBox" placeholder="Date Format: yyyy/mm/dd" required="true"></asp:TextBox>
                     <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Invalid Date! Format: yyyy/mm/dd"
-                        ControlToValidate="DateTextBox" MinimumValue="2000/01/01" MaximumValue="2099/01/01"
+                        ControlToValidate="MatchDateTextBox" MinimumValue="2000/01/01" MaximumValue="2099/01/01"
                          Display="Dynamic" BackColor="Red" ForeColor="White" Font-Size="Large" ></asp:RangeValidator>
                 </div>
                 <div class="form-group">
@@ -27,12 +27,12 @@
                     <asp:TextBox runat="server" CssClass="form-control" id="RoundNumberTextBox" placeholder="Round" required="true"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="Team1TextBox">Team 1 Name: </label>
-                    <asp:TextBox runat="server" CssClass="form-control" id="Team1TextBox" placeholder="Team 1" required="true"></asp:TextBox>
+                    <label class="control-label" for="FirstTeamTextBox">Team 1 Name: </label>
+                    <asp:TextBox runat="server" CssClass="form-control" id="FirstTeamTextBox" placeholder="Team 1" required="true"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="Team2TextBox">Team 2 Name: </label>
-                    <asp:TextBox runat="server" CssClass="form-control" id="Team2TextBox" placeholder="Team 2" required="true"></asp:TextBox>
+                    <label class="control-label" for="SecondTeamTextBox">Team 2 Name: </label>
+                    <asp:TextBox runat="server" CssClass="form-control" id="SecondTeamTextBox" placeholder="Team 2" required="true"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="POTGTextBox">Play of the game: </label>
@@ -41,10 +41,6 @@
                 <div class="form-group">
                     <label class="control-label" for="WinnerTextBox">Winner: </label>
                     <asp:TextBox runat="server" CssClass="form-control" id="WinnerTextBox" placeholder="Winner" required="true"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="LengthTextBox">Length of Match: </label>
-                    <asp:TextBox runat="server" CssClass="form-control" id="LengthTextBox" placeholder="Length of Match" required="true"></asp:TextBox>
                 </div>
                 
                 <div class="text-right">
