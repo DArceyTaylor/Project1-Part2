@@ -16,22 +16,22 @@ namespace COMP2007_Project1_Part1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // if loading the page for the first time, populate the student grid
+            // if loading the page for the first time, populate the gamedata grid
             if (!IsPostBack)
             {
                 Session["SortColumn"] = "GameID"; //default sort column
                 Session["SortDirection"] = "ASC";
-                // Get the student data
+                // Get the game data
                 this.GetGameData();
             }
         }
 
         /**
          * <summary>
-         * This method gets the student data from the DB
+         * This method gets the game data from the DB
          * </summary>
          * 
-         * @method GetStudents
+         * @method GetGameData
          * @returns {void}
          */
         protected void GetGameData()
@@ -42,7 +42,7 @@ namespace COMP2007_Project1_Part1
 
                 string SortString = Session["SortColumn"].ToString() + " " + Session["SortDirection"].ToString();
 
-                // query the Students Table using EF and LINQ
+                // query the games Table using EF and LINQ
                 var Games = (from allGames in db.Games
                              select allGames);
 
@@ -73,10 +73,10 @@ namespace COMP2007_Project1_Part1
 
         /**
          * <summary>
-         * this event handler deletes a student from the db using EF
+         * this event handler deletes a game from the db using EF
          * </summary>
          * 
-         * @method StudentsGridView_RowDeleting
+         * @method GameDataGridView_RowDeleting
          * @param {object} sender
          * @param {GridViewDeleteEventArgs} e
          * @returns {void}
@@ -86,18 +86,18 @@ namespace COMP2007_Project1_Part1
             // store which row was clicked
             int selectedRow = e.RowIndex;
 
-            // get selected StudentID using the Grid's DataKey Collection
+            // get selected gameID using the Grid's DataKey Collection
             int GameID = Convert.ToInt32(GameDataGridView.DataKeys[selectedRow].Values["GameID"]);
 
-            // use EF to find the selected student in the DB and remove it
+            // use EF to find the selected game in the DB and remove it
             using (GameConnection db = new GameConnection())
             {
-                //create object of the Student class and store the query string inside of it
+                //create object of the game class and store the query string inside of it
                 Game deletedDepartment = (from gameRecords in db.Games
                                                 where gameRecords.GameID == GameID
                                                 select gameRecords).FirstOrDefault();
 
-                // remove the selected student from the db
+                // remove the selected game from the db
                 db.Games.Remove(deletedDepartment);
 
                 // save the changes
@@ -110,9 +110,9 @@ namespace COMP2007_Project1_Part1
 
         /**
          * <summary>
-         * This event handler allows pagination to occur fo the students page
+         * This event handler allows pagination to occur for the game tracker page
          * </summary>
-         * @method StudentsGridView_PageIndexChanging
+         * @method GameDataGridView_PageIndexChanging
          * @param {object} sender
          * @param {GridViewPageEventArgs} e
          * @returns {void}
@@ -130,7 +130,7 @@ namespace COMP2007_Project1_Part1
          * <summary>
          * Sorts the objects are on each grid view
          * </summary>
-         * @method StudentsGridView_Sorting
+         * @method GameDataGridView_Sorting
          * @param {object} sender
          * @param {GridViewSortEventArgs} e
          * @returns {void}

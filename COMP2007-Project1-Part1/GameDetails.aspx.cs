@@ -28,12 +28,12 @@ namespace COMP2007_Project1_Part1
             //connect to the EF framework
             using (GameConnection db = new GameConnection())
             {
-                //populate a student object instance with the GameID from the URL paramerter
+                //populate a game object instance with the GameID from the URL paramerter
                 Game updatedGame = (from game in db.Games
                                     where game.GameID == GameID
                                     select game).FirstOrDefault();
 
-                //map the student properties to the form controls
+                //map the game properties to the form controls
                 if (updatedGame != null)
                 {
                     MatchDateTextBox.Text = updatedGame.MatchDate.ToString();
@@ -52,7 +52,7 @@ namespace COMP2007_Project1_Part1
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
-            // redirect back to students page
+            // redirect back to gametracker page
             Response.Redirect("~/GameTracker.aspx");
         }
 
@@ -62,24 +62,24 @@ namespace COMP2007_Project1_Part1
             // use EF to connect to the server
             using (GameConnection db = new GameConnection())
             {
-                // use the Student model to create a new student object and
+                // use the game model to create a new game object and
                 // save a new record
                 Game newGame = new Game();
 
                 int GameID = 0;
 
-                if (Request.QueryString.Count > 0)// our URL contains a StudentID
+                if (Request.QueryString.Count > 0)// our URL contains a gameID
                 {
                     //get the ID from the URL
                     GameID = Convert.ToInt32(Request.QueryString["GameID"]);
 
-                    //get the current student from the EF db
+                    //get the current game from the EF db
                     newGame = (from game in db.Games
                                where game.GameID == GameID
                                select game).FirstOrDefault();
                 }
 
-                // add data to the new student record
+                // add data to the new game record
                 newGame.MatchDate = Convert.ToDateTime(MatchDateTextBox.Text);
                 newGame.GameName = GameNameTextBox.Text;
                 newGame.MatchNumber = Convert.ToInt32(MatchNumberTextBox.Text);
@@ -90,7 +90,7 @@ namespace COMP2007_Project1_Part1
                 newGame.Winner = WinnerTextBox.Text;
                 //newGame.MatchLength = TimeSpan.Parse(LengthTextBox.Text);
 
-                // use LINQ to ADO.NET to add / insert new student to the db
+                // use LINQ to ADO.NET to add / insert new game to the db
                 if (GameID == 0)
                 {
                     db.Games.Add(newGame);
@@ -100,7 +100,7 @@ namespace COMP2007_Project1_Part1
                 
                 db.SaveChanges();
 
-                // redirect back to the updated students page
+                // redirect back to the updated gametracker page
                 Response.Redirect("~/GameTracker.aspx");
             }
         }
